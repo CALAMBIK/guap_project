@@ -1,0 +1,12 @@
+<div class="tech-container">
+  <h2>Технические возможности</h2>
+  <div class="tech-cards">
+    <div class="tech-card" *ngFor="let feature of techFeatures$ | async">
+      <span class="tech-icon">{{ feature.icon }}</span>
+      <h3>{{ feature.title }}</h3>
+      <p>{{ feature.description }}</p>
+      <div class="tech-details">{{ feature.details }}</div>
+    </div>
+  </div>
+  <canvas id="techChart"></canvas>
+</div>

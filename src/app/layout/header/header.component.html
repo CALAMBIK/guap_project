@@ -1,0 +1,14 @@
+<div class="header">
+  <div class="img-icon">
+    <a [routerLink]="['/']"
+      ><img src="assets/logo-home.png" alt="Smart Home"
+    /></a>
+  </div>
+  <div class="nav">
+    <div class="route-link" *ngFor="let nav of navArray">
+      <a [routerLink]="[`/${nav.link}`]" routerLinkActive="link-active">{{
+        nav.title
+      }}</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+.tech-container {
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.tech-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.tech-card {
+  width: 200px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f5f5f5;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.tech-icon {
+  font-size: 40px;
+}
+.tech-details {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.tech-card:hover .tech-details {
+  display: block;
+}
