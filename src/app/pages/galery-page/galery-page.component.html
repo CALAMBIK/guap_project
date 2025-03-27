@@ -1,1 +1,13 @@
-<p>galery-page works!</p>
+<div class="galery">
+  <h1>Слайдер с картинками умного города</h1>
+
+  <div class="slider-container">
+    <button class="slider-btn prev" (click)="prevSlide()">❮</button>
+
+    <div class="slider">
+      <img [src]="imgs[currentIndex]" alt="Слайд" class="slide" />
+    </div>
+
+    <button class="slider-btn next" (click)="nextSlide()">❯</button>
+  </div>
+</div>
