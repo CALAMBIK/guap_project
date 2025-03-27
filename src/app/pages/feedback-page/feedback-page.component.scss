@@ -1,0 +1,93 @@
+/* Основные стили для контейнера формы */
+.feedback-container {
+  width: 600px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+}
+
+/* Заголовок формы */
+.feedback-form-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Стили для всех меток (label) */
+.feedback-label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* Стили для текста метки */
+.feedback-label__text {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Стили для текстовых и select полей */
+.feedback-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.feedback-input:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* Стили для текстовой области */
+.feedback-textarea {
+  resize: vertical;
+}
+
+/* Стили для радиокнопок */
+.query-options input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Стили для кнопки отправки */
+.feedback-submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.feedback-submit-btn:hover {
+  background-color: #45a049;
+}
+
+.feedback-submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Ошибки валидности */
+.feedback-label .error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}

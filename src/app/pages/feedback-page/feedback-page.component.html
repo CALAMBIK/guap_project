@@ -1,1 +1,181 @@
-<p>feedback-page works!</p>
+<form
+  [formGroup]="feedbackForm"
+  class="feedback-container"
+  (submit)="onSubmit()"
+>
+  <h2 class="feedback-form-title">Обратная связь</h2>
+
+  <!-- Имя -->
+  <label class="feedback-label">
+    <span class="feedback-label__text">Имя:</span>
+    <input
+      type="text"
+      formControlName="name"
+      placeholder="Введите имя"
+      class="feedback-input"
+    />
+    <div
+      *ngIf="
+        feedbackForm.get('name')?.touched && feedbackForm.get('name')?.invalid
+      "
+      class="error-message"
+    >
+      <div *ngIf="feedbackForm.get('name')?.hasError('required')">
+        Имя обязательно для заполнения
+      </div>
+    </div>
+  </label>
+
+  <!-- Email -->
+  <label class="feedback-label">
+    <span class="feedback-label__text">Email:</span>
+    <input
+      type="text"
+      formControlName="email"
+      placeholder="Введите email"
+      class="feedback-input"
+    />
+    <div
+      *ngIf="
+        feedbackForm.get('email')?.touched && feedbackForm.get('email')?.invalid
+      "
+      class="error-message"
+    >
+      <div *ngIf="feedbackForm.get('email')?.hasError('required')">
+        Email обязателен
+      </div>
+      <div *ngIf="feedbackForm.get('email')?.hasError('email')">
+        Некорректный email
+      </div>
+    </div>
+  </label>
+
+  <!-- Телефон -->
+  <label class="feedback-label">
+    <span class="feedback-label__text">Телефон:</span>
+    <input
+      type="text"
+      formControlName="phone"
+      placeholder="Введите телефон"
+      class="feedback-input"
+    />
+    <div
+      *ngIf="
+        feedbackForm.get('phone')?.touched && feedbackForm.get('phone')?.invalid
+      "
+      class="error-message"
+    >
+      <div *ngIf="feedbackForm.get('phone')?.hasError('required')">
+        Телефон обязателен
+      </div>
+      <div *ngIf="feedbackForm.get('phone')?.hasError('pattern')">
+        Некорректный формат телефона
+      </div>
+    </div>
+  </label>
+
+  <!-- Тема обращения -->
+  <label class="feedback-label">
+    <span class="feedback-label__text">Тема обращения:</span>
+    <select formControlName="subject" class="feedback-input">
+      <option value="question">Вопрос по проекту</option>
+      <option value="support">Техническая поддержка</option>
+      <option value="suggestion">Предложение</option>
+    </select>
+    <div
+      *ngIf="
+        feedbackForm.get('subject')?.touched &&
+        feedbackForm.get('subject')?.invalid
+      "
+      class="error-message"
+    >
+      <div *ngIf="feedbackForm.get('subject')?.hasError('required')">
+        Выберите тему обращения
+      </div>
+    </div>
+  </label>
+
+  <!-- Сообщение -->
+  <label class="feedback-label">
+    <span class="feedback-label__text">Сообщение:</span>
+    <textarea
+      placeholder="Введите сообщение"
+      class="feedback-input feedback-textarea"
+      rows="4"
+      formControlName="message"
+    ></textarea>
+    <div
+      *ngIf="
+        feedbackForm.get('message')?.touched &&
+        feedbackForm.get('message')?.invalid
+      "
+      class="error-message"
+    >
+      <div *ngIf="feedbackForm.get('message')?.hasError('maxlength')">
+        Сообщение не может быть длиннее 500 символов
+      </div>
+    </div>
+  </label>
+
+  <!-- Тип запроса -->
+  <label class="feedback-label">
+    <span class="feedback-label__text">Тип запроса:</span>
+    <div class="query-options">
+      <input
+        type="radio"
+        id="query-question"
+        name="queryType"
+        value="question"
+        formControlName="queryType"
+      />
+      <label for="query-question">Вопрос</label><br />
+
+      <input
+        type="radio"
+        id="query-complaint"
+        name="queryType"
+        value="complaint"
+        formControlName="queryType"
+      />
+      <label for="query-complaint">Жалоба</label><br />
+
+      <input
+        type="radio"
+        id="query-issue"
+        name="queryType"
+        value="issue"
+        formControlName="queryType"
+      />
+      <label for="query-issue">Проблема</label><br />
+
+      <input
+        type="radio"
+        id="query-suggestion"
+        name="queryType"
+        value="suggestion"
+        formControlName="queryType"
+      />
+      <label for="query-suggestion">Предложение</label>
+    </div>
+    <div
+      *ngIf="
+        feedbackForm.get('queryType')?.touched &&
+        feedbackForm.get('queryType')?.invalid
+      "
+      class="error-message"
+    >
+      <div *ngIf="feedbackForm.get('queryType')?.hasError('required')">
+        Выберите тип запроса
+      </div>
+    </div>
+  </label>
+
+  <!-- Кнопка отправки -->
+  <button
+    type="submit"
+    class="feedback-submit-btn"
+    [disabled]="feedbackForm.invalid"
+  >
+    Отправить
+  </button>
+</form>
