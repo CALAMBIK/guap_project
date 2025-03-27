@@ -1,1 +1,12 @@
-<p>implementation-problems-page works!</p>
+<div class="problem-container">
+  <h2>Проблемы реализации</h2>
+  <div class="problem-cards">
+    <div class="problem-card" *ngFor="let problem of problems">
+      <span class="problem-icon">{{ problem.icon }}</span>
+      <h3>{{ problem.title }}</h3>
+      <p>{{ problem.description }}</p>
+      <div class="problem-details">{{ problem.details }}</div>
+    </div>
+  </div>
+  <canvas id="problemChart"></canvas>
+</div>

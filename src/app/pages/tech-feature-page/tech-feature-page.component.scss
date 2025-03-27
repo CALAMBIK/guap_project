@@ -1,6 +1,8 @@
 .tech-container {
-  padding: 20px;
   text-align: center;
+  padding: 20px;
+  position: relative;
+  z-index: 5;
 }
 
 h2 {
@@ -10,27 +12,40 @@ h2 {
 .tech-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
 }
+
 .tech-card {
   width: 200px;
+  min-height: 130px;
   padding: 15px;
   border-radius: 10px;
   background: #f5f5f5;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
   margin-bottom: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  display: inline-block;
 }
 
-.tech-icon {
-  font-size: 40px;
+.tech-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
+
 .tech-details {
-  display: none;
   margin-top: 10px;
-  font-size: 14px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, height 0.3s ease;
 }
+
 .tech-card:hover .tech-details {
-  display: block;
+  opacity: 1;
+  height: auto;
 }
