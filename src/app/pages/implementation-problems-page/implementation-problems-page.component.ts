@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ProblemsService } from '../../services/problems.service';
 import { TechFeature } from '../../models/tech-feature';
 import { NgFor } from '@angular/common';
@@ -9,6 +9,7 @@ import { Chart } from 'chart.js';
   imports: [NgFor],
   templateUrl: './implementation-problems-page.component.html',
   styleUrl: './implementation-problems-page.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ImplementationProblemsPageComponent {
   private readonly problemsService = inject(ProblemsService);

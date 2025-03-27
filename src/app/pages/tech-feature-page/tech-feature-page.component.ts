@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import Chart from 'chart.js/auto';
@@ -10,6 +10,7 @@ import { TechFeatureService } from '../../services/tech-feature.service';
   imports: [NgFor, AsyncPipe],
   templateUrl: './tech-feature-page.component.html',
   styleUrl: './tech-feature-page.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TechFeaturePageComponent {
   private readonly techFeatureService = inject(TechFeatureService);

@@ -1,5 +1,5 @@
 import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NavArray } from '../../models/nav-array';
 
@@ -8,6 +8,7 @@ import { NavArray } from '../../models/nav-array';
   imports: [RouterLink, RouterLinkActive, NgFor],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
   public navArray: NavArray[] = [
